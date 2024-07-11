@@ -4,11 +4,11 @@ import { CantidadComponent, DataClientComponent, ReviewPageComponent, ThanksComp
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/tipo-de-churro',
+    redirectTo: '/nuevo-pedido',
     pathMatch: 'full'
   },
   {
-    path: 'tipo-de-churro',
+    path: 'nuevo-pedido',
     component: TipoDeChurroComponent
   },
   {
