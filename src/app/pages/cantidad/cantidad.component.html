@@ -3,7 +3,7 @@
     ¿Cuántos churros vas a querer?
   </h1>
   <div class="flex justify-center gap-8 mt-4 mx-4 flex-wrap">
-    <a href="address">
+    <a (click)="buyChurros(6, mediaDocenaPrice)">
       <div
         class="bg-[#f3ebde] rounded-xl flex flex-col items-center p-4 shadow-xl transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer hover:bg-[#e5dacb] active:bg-[#dbc8b6]"
       >
@@ -16,7 +16,7 @@
         <h2 class="font-semibold text-xl">${{ mediaDocenaPrice }}</h2>
       </div>
     </a>
-    <a href="address">
+    <a (click)="buyChurros(12, docenaPrice)">
       <div
         class="bg-[#f3ebde] rounded-xl flex flex-col items-center p-4 shadow-xl transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer hover:bg-[#e5dacb] active:bg-[#dbc8b6]"
       >
@@ -29,7 +29,7 @@
         <h2 class="font-semibold text-xl">${{ docenaPrice }}</h2>
       </div>
     </a>
-    <a href="address">
+    <a (click)="buyChurros(24, dosDocenasPrice)">
       <div
         class="bg-[#f3ebde] rounded-xl flex flex-col items-center p-4 shadow-xl transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer hover:bg-[#e5dacb] active:bg-[#dbc8b6]"
       >
@@ -49,7 +49,7 @@
     <p class="text-xl">
       Precio: <strong>${{ totaUnitPrice }}</strong>
     </p>
-    <a href="address">
+    <a (click)="buyChurros(totalUnitChurros, totaUnitPrice)">
       <button class="bg-[#dbc997] p-6 rounded-xl text-2xl font-bold">
         ¡Comprar!
       </button>

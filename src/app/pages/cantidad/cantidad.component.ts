@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CounterComponent } from '../../components';
 import { ActivatedRoute } from '@angular/router';
+import { Purchase } from '../../models/PedidoData';
 
 @Component({
   selector: 'app-cantidad',
@@ -15,9 +16,11 @@ export class CantidadComponent implements OnInit {
   docenaPrice: number = 3999;
   dosDocenasPrice: number = 6499;
   unitPrice: number = 499;
+  totalUnitChurros: number = 0;
   totaUnitPrice: number = 0;
   imageURL: string =
     'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/simples.png?alt=media&token=88295da0-482b-48d6-99ba-53f7f550c31e';
+  purchaseTotal: Purchase = {} as Purchase;
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -32,6 +35,7 @@ export class CantidadComponent implements OnInit {
   }
 
   onCounterChanged(count: number) {
+    this.totalUnitChurros = count;
     this.totaUnitPrice = count * this.unitPrice;
   }
 
@@ -51,5 +55,12 @@ export class CantidadComponent implements OnInit {
     this.imageURL =
       'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/dulcedeleche.png?alt=media&token=8c326463-c25c-40ac-a508-a0acaf034a72';
     this.unitPrice = 600;
+  }
+
+  buyChurros(quantity: number, price: number){
+    this.purchaseTotal.type = this.typeChurro;
+    this.purchaseTotal.totalChurros = quantity;
+    this.purchaseTotal.totalPrice = price;
+    localStorage.setItem('purchase', JSON.stringify(this.purchaseTotal))
   }
 }
