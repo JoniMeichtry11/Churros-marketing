@@ -61,6 +61,7 @@ export class CantidadComponent implements OnInit {
     this.purchaseTotal.type = this.typeChurro;
     this.purchaseTotal.totalChurros = quantity;
     this.purchaseTotal.totalPrice = price;
+    this.purchaseTotal.imageChurroURL = this.typeChurro === 'simple' ? 'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/simples.png?alt=media&token=88295da0-482b-48d6-99ba-53f7f550c31e' : 'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/dulcedeleche.png?alt=media&token=8c326463-c25c-40ac-a508-a0acaf034a72';
     localStorage.setItem('purchase', JSON.stringify(this.purchaseTotal));
     this.router.navigate(['address']);
   }

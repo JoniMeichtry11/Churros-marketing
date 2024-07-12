@@ -9,6 +9,7 @@ export interface Pedido {
 
 export interface Purchase {
   type: string | null;
+  imageChurroURL: string;
   totalChurros: number;
   totalPrice: number;
 }
