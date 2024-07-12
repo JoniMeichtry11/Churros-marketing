@@ -12,11 +12,11 @@ export const routes: Routes = [
     component: TipoDeChurroComponent
   },
   {
-    path: 'cantidad',
+    path: 'cantidad/:type',
     component: CantidadComponent
   },
   {
-    path: 'data-client',
+    path: 'address',
     component: DataClientComponent
   },
   {
