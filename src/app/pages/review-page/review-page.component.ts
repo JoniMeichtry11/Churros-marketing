@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../../models/PedidoData';
 
 @Component({
@@ -8,6 +8,10 @@ import { Pedido } from '../../models/PedidoData';
   templateUrl: './review-page.component.html',
   styleUrl: './review-page.component.scss'
 })
-export class ReviewPageComponent {
+export class ReviewPageComponent implements OnInit {
   pedidoReview: Pedido = {} as Pedido;
+
+  ngOnInit(): void {
+    this.pedidoReview  = JSON.parse(localStorage.getItem('purchase') as string);
+  }
 }

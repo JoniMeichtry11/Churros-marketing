@@ -7,12 +7,12 @@
       class="bg-[#f3ebde] rounded-xl flex flex-col items-center p-4 shadow-xl"
     >
       <img
-        src="https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/simples.png?alt=media&token=88295da0-482b-48d6-99ba-53f7f550c31e"
+        [src]="pedidoReview.imageChurroURL"
         alt="Churros con dulce de leche"
         class="w-52 rounded-xl"
       />
-      <h1 class="font-bold text-2xl mt-2">12 Churros Simples</h1>
-      <h2 class="font-semibold text-2xl">$4500</h2>
+      <h1 class="font-bold text-2xl mt-2">{{pedidoReview.totalChurros}} Churros Simples</h1>
+      <h2 class="font-semibold text-2xl">${{pedidoReview.totalPrice}}</h2>
     </div>
     <div
       class="bg-[#f3ebde] rounded-xl flex flex-col items-center p-4 shadow-xl my-4 xl:my-0 max-w-96"
@@ -20,16 +20,18 @@
       <h2 class="text-center text-xl font-bold">Datos del Envío</h2>
       <ul>
         <li class="my-2">
-          <p>Nombre: <strong>Juancito</strong></p>
+          <p>Nombre: <strong>{{pedidoReview.clientName}}</strong></p>
         </li>
         <li class="my-2">
-          <p>Dirección: <strong>Calle pedro loreto</strong></p>
+          <p>Dirección: <strong>{{pedidoReview.clientAddress}}</strong></p>
         </li>
-        <li class="my-2">
-          <p class="text-wrap">
-            Datos adicionales: <strong>Casa con rejas negras</strong>
-          </p>
-        </li>
+        @if(pedidoReview.aditionalInfoAddress){
+          <li class="my-2">
+            <p class="text-wrap">
+              Datos adicionales: <strong>{{pedidoReview.aditionalInfoAddress}}</strong>
+            </p>
+          </li>
+        }
       </ul>
     </div>
   </div>
