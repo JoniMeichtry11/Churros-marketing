@@ -20,8 +20,8 @@ export class DataClientComponent {
 
   constructor(private formBuilder: FormBuilder, private router: Router) {
     this.clientForm = this.formBuilder.group({
-      name: ['', [Validators.required]],
-      address: ['', [Validators.required]],
+      clientName: ['', [Validators.required]],
+      clientAddress: ['', [Validators.required]],
       aditionalInfoAddress: [''],
     });
   }

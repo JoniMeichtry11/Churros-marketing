@@ -14,7 +14,7 @@
               'border-red-500': name?.invalid && (name?.dirty || name?.touched),
               'bg-gray-200': true
             }"
-            formControlName="name"
+            formControlName="clientName"
           />
           @if(name?.invalid && (name?.dirty || name?.touched)){
             <div
@@ -35,7 +35,7 @@
               'border-red-500': address?.invalid && (address?.dirty || address?.touched),
               'bg-gray-200': true
             }"
-            formControlName="address"
+            formControlName="clientAddress"
           />
           @if(address?.invalid && (address?.dirty || address?.touched)){
             <div
