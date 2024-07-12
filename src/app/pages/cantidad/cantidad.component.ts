@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CounterComponent } from '../../components';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Purchase } from '../../models/PedidoData';
 
 @Component({
@@ -21,7 +21,7 @@ export class CantidadComponent implements OnInit {
   imageURL: string =
     'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/simples.png?alt=media&token=88295da0-482b-48d6-99ba-53f7f550c31e';
   purchaseTotal: Purchase = {} as Purchase;
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -61,6 +61,7 @@ export class CantidadComponent implements OnInit {
     this.purchaseTotal.type = this.typeChurro;
     this.purchaseTotal.totalChurros = quantity;
     this.purchaseTotal.totalPrice = price;
-    localStorage.setItem('purchase', JSON.stringify(this.purchaseTotal))
+    localStorage.setItem('purchase', JSON.stringify(this.purchaseTotal));
+    this.router.navigate(['address']);
   }
 }
