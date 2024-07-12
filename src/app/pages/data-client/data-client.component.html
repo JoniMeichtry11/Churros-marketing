@@ -3,35 +3,47 @@
   <div
     class="bg-white shadow-md rounded max-w-5xl px-8 pt-6 pb-8 mx-8 mb-8 flex flex-col"
   >
-    <form [formGroup]="clientForm">
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
       <div class="items-center mt-2">
         <div class="w-full flex flex-col">
           <label class="font-semibold leading-none">Nombre</label>
           <input
             type="text"
-            class="leading-none p-3 focus:outline-none mt-4 border-0 bg-gray-200 rounded"
+            class="leading-none p-3 focus:outline-none mt-4 border rounded"
+            [ngClass]="{
+              'border-red-500': name?.invalid && (name?.dirty || name?.touched),
+              'bg-gray-200': true
+            }"
             formControlName="name"
           />
+          @if(name?.invalid && (name?.dirty || name?.touched)){
+            <div
+              class="text-red-500 mt-2"
+            >
+              El nombre es requerido.
+            </div>
+          }
         </div>
-        <!-- <div class="w-full flex flex-col mt-4">
-          <label class="font-semibold leading-none "
-            >Teléfono de contacto</label
-          >
-          <input
-            type="number"
-            class="leading-none p-3 focus:outline-none mt-4 border-0 bg-gray-200 rounded"
-            formControlName="phoneNumber"
-          />
-        </div> -->
       </div>
       <div class="md:flex items-center mt-4">
         <div class="w-full flex flex-col">
           <label class="font-semibold leading-none">Dirección </label>
           <input
             type="text"
-            class="leading-none p-3 focus:outline-none mt-4 border-0 bg-gray-200 rounded"
+            class="leading-none p-3 focus:outline-none mt-4 border rounded"
+            [ngClass]="{
+              'border-red-500': address?.invalid && (address?.dirty || address?.touched),
+              'bg-gray-200': true
+            }"
             formControlName="address"
           />
+          @if(address?.invalid && (address?.dirty || address?.touched)){
+            <div
+              class="text-red-500 mt-2"
+            >
+              La dirección es requerida.
+            </div>
+          }
         </div>
       </div>
       <div>
@@ -48,12 +60,10 @@
       </div>
       <div class="flex flex-col sm:flex-row justify-between mt-4">
         <div class="flex items-center justify-center w-full my-4">
-          <a
-            href="review"
-            class="text-center bg-[#dbc997] w-full py-2 rounded-full"
+          <button type="submit" class="text-center bg-[#dbc997] w-full py-2 rounded-full"
           >
             Continuar compra
-          </a>
+          </button>
         </div>
       </div>
     </form>
