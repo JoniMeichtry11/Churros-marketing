@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Pedido } from '../../models/Pedido';
 
 @Component({
   selector: 'app-review-page',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './review-page.component.scss'
 })
 export class ReviewPageComponent {
-
+  pedidoReview: Pedido = {} as Pedido;
 }
