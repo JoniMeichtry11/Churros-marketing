@@ -11,7 +11,7 @@
         alt="Churros con dulce de leche"
         class="w-52 rounded-xl"
       />
-      <h1 class="font-bold text-2xl mt-2">{{pedidoReview.totalChurros}} Churros Simples</h1>
+      <h1 class="font-bold text-2xl mt-2 text-center">{{pedidoReview.totalChurros}} {{pedidoReview.type === 'dulce' ? 'Churros con Dulce de leche' : 'Churros simples'}}</h1>
       <h2 class="font-semibold text-2xl">${{pedidoReview.totalPrice}}</h2>
     </div>
     <div
@@ -32,6 +32,12 @@
             </p>
           </li>
         }
+        <li class="my-2">
+          <p>Día de entrega: <strong>{{pedidoReview.deliveryDay}}</strong></p>
+        </li>
+        <li class="my-2">
+          <p>Horario de entrega: <strong>{{pedidoReview.deliveryTime}}hs</strong></p>
+        </li>
       </ul>
     </div>
   </div>

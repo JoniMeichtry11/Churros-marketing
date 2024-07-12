@@ -6,6 +6,8 @@ export interface Pedido {
   clientName: string;
   clientAddress: string;
   aditionalInfoAddress: string;
+  deliveryDay: string;
+  deliveryTime: string;
 }
 
 export interface Purchase {

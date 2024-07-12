@@ -21,22 +21,26 @@ export class ReviewPageComponent implements OnInit {
   }
 
   generateMessage() {
-    const { clientName, clientAddress, aditionalInfoAddress, totalChurros, totalPrice } = this.pedidoReview;
+    const { clientName, clientAddress, aditionalInfoAddress, totalChurros, totalPrice, deliveryDay, deliveryTime } = this.pedidoReview;
     if(aditionalInfoAddress){
       this.message = `Hola, quiero confirmar mi pedido de churros:
-      - *Nombre:* ${clientName}
-      - *Dirección:* ${clientAddress}
-      - *Datos adicionales:* ${aditionalInfoAddress}
-      - *Cantidad de churros:* ${totalChurros}
-      - *Precio Total:* $${totalPrice}
-      ¡Muchas Gracias! 😁👍🏼`;
+- *Nombre:* ${clientName}
+- *Dirección:* ${clientAddress}
+- *Datos adicionales:* ${aditionalInfoAddress}
+- *Día de entrega:* ${deliveryDay}
+- *Horario de entrega:* ${deliveryTime}hs
+- *Cantidad de churros:* ${totalChurros}
+- *Precio Total:* $${totalPrice}
+¡Muchas Gracias! 😁👍🏼`;
     } else {
       this.message = `Hola, quiero confirmar mi pedido de churros:
-      - *Nombre:* ${clientName}
-      - *Dirección:* ${clientAddress}
-      - *Cantidad de churros:* ${totalChurros}
-      - *Precio Total:* $${totalPrice}
-      ¡Muchas Gracias! 😁👍🏼`;
+- *Nombre:* ${clientName}
+- *Dirección:* ${clientAddress}
+- *Día de entrega:* ${deliveryDay}
+- *Horario de entrega:* ${deliveryTime}hs
+- *Cantidad de churros:* ${totalChurros}
+- *Precio Total:* $${totalPrice}
+¡Muchas Gracias! 😁👍🏼`;
     }
   }
 

@@ -9,17 +9,15 @@
           <label class="font-semibold leading-none">Nombre</label>
           <input
             type="text"
-            class="leading-none p-3 focus:outline-none mt-4 border rounded"
+            class="leading-none p-3 focus:outline-none mt-4 border-2 rounded"
             [ngClass]="{
-              'border-red-500': name?.invalid && (name?.dirty || name?.touched),
+              'border-red-500': clientName?.invalid && (clientName?.dirty || clientName?.touched),
               'bg-gray-200': true
             }"
             formControlName="clientName"
           />
-          @if(name?.invalid && (name?.dirty || name?.touched)){
-            <div
-              class="text-red-500 mt-2"
-            >
+          @if(clientName?.invalid && (clientName?.dirty || clientName?.touched)){
+            <div class="text-red-500 mt-2">
               El nombre es requerido.
             </div>
           }
@@ -30,17 +28,15 @@
           <label class="font-semibold leading-none">Dirección </label>
           <input
             type="text"
-            class="leading-none p-3 focus:outline-none mt-4 border rounded"
+            class="leading-none p-3 focus:outline-none mt-4 border-2 rounded"
             [ngClass]="{
-              'border-red-500': address?.invalid && (address?.dirty || address?.touched),
+              'border-red-500': clientAddress?.invalid && (clientAddress?.dirty || clientAddress?.touched),
               'bg-gray-200': true
             }"
             formControlName="clientAddress"
           />
-          @if(address?.invalid && (address?.dirty || address?.touched)){
-            <div
-              class="text-red-500 mt-2"
-            >
+          @if(clientAddress?.invalid && (clientAddress?.dirty || clientAddress?.touched)){
+            <div class="text-red-500 mt-2">
               La dirección es requerida.
             </div>
           }
@@ -48,9 +44,7 @@
       </div>
       <div>
         <div class="w-full flex flex-col mt-4">
-          <label class="font-semibold leading-none"
-            >Indicaciones adicionales de esta dirección (opcional)</label
-          >
+          <label class="font-semibold leading-none">Indicaciones adicionales de esta dirección (opcional)</label>
           <textarea
             type="text"
             class="h-40 text-base leading-none p-3 focus:outline-none mt-4 bg-gray-200 border-0 rounded"
@@ -58,12 +52,41 @@
           ></textarea>
         </div>
       </div>
+      <div class="w-full flex flex-col mt-4">
+        <label class="font-semibold leading-none">Día de entrega</label>
+        <select class="leading-none p-3 mt-4 bg-gray-200 border-2 rounded" formControlName="deliveryDay" [ngClass]="{
+          'border-red-500': deliveryDay?.invalid && (deliveryDay?.dirty || deliveryDay?.touched),
+          'bg-gray-200': true
+        }">
+          @for (day of availableDays; track day) {
+            <option [value]="day">{{ day }}</option>
+          }
+        </select>
+        @if(deliveryDay?.invalid && (deliveryDay?.dirty || deliveryDay?.touched)){
+          <div class="text-red-500 mt-2">
+            El día de entrega es requerido.
+          </div>
+        }
+      </div>
+      <div class="w-full flex flex-col mt-4">
+        <label class="font-semibold leading-none">Horario de entrega</label>
+        <select class="leading-none p-3 mt-4 bg-gray-200 border-2 rounded" formControlName="deliveryTime" [ngClass]="{
+          'border-red-500': deliveryTime?.invalid && (deliveryTime?.dirty || deliveryTime?.touched),
+          'bg-gray-200': true
+        }">
+          @for(time of deliveryTimes; track time){
+            <option [value]="time">{{ time }}</option>
+          }
+        </select>
+        @if(deliveryTime?.invalid && (deliveryTime?.dirty || deliveryTime?.touched)){
+          <div class="text-red-500 mt-2">
+            El horario de entrega es requerido.
+          </div>
+        }
+      </div>
       <div class="flex flex-col sm:flex-row justify-between mt-4">
         <div class="flex items-center justify-center w-full my-4">
-          <button type="submit" class="text-center bg-[#dbc997] w-full py-2 rounded-full"
-          >
-            Continuar compra
-          </button>
+          <button type="submit" class="text-center bg-[#dbc997] w-full py-2 rounded-full">Continuar compra</button>
         </div>
       </div>
     </form>
