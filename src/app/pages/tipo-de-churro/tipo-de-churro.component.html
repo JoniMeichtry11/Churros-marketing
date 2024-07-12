@@ -11,7 +11,7 @@
     Seleccioná el tipo de churro que querés comprar
   </h3>
   <div class="flex justify-center gap-4 xl:gap-8 mx-4">
-    <a href="cantidad">
+    <a [routerLink]="['/cantidad', 'simple']">
       <div
         class="bg-[#f3ebde] rounded-xl flex flex-col items-center p-4 shadow-xl transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer hover:bg-[#e5dacb] active:bg-[#dbc8b6]"
       >
@@ -24,7 +24,7 @@
         <h2 class="font-semibold text-xl">Simples</h2>
       </div>
     </a>
-    <a href="cantidad">
+    <a [routerLink]="['/cantidad', 'dulce']">
       <div
         class="bg-[#f3ebde] rounded-xl flex flex-col items-center p-4 shadow-xl transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer hover:bg-[#e5dacb] active:bg-[#dbc8b6]"
       >

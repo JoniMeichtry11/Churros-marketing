@@ -1,1 +1,58 @@
-<p>cantidad works!</p>
+<div class="min-h-screen p-4">
+  <h1 class="text-4xl font-bold text-center p-4">
+    ¿Cuántos churros vas a querer?
+  </h1>
+  <div class="flex justify-center gap-8 mt-4 mx-4 flex-wrap">
+    <a href="address">
+      <div
+        class="bg-[#f3ebde] rounded-xl flex flex-col items-center p-4 shadow-xl transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer hover:bg-[#e5dacb] active:bg-[#dbc8b6]"
+      >
+        <img
+          [src]="imageURL"
+          alt="Churros con dulce de leche"
+          class="w-52 rounded-xl"
+        />
+        <h1 class="font-bold text-2xl mt-2">6 churros</h1>
+        <h2 class="font-semibold text-xl">${{ mediaDocenaPrice }}</h2>
+      </div>
+    </a>
+    <a href="address">
+      <div
+        class="bg-[#f3ebde] rounded-xl flex flex-col items-center p-4 shadow-xl transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer hover:bg-[#e5dacb] active:bg-[#dbc8b6]"
+      >
+        <img
+          [src]="imageURL"
+          alt="Churros con dulce de leche"
+          class="w-52 rounded-xl"
+        />
+        <h1 class="font-bold text-2xl mt-2">12 churros</h1>
+        <h2 class="font-semibold text-xl">${{ docenaPrice }}</h2>
+      </div>
+    </a>
+    <a href="address">
+      <div
+        class="bg-[#f3ebde] rounded-xl flex flex-col items-center p-4 shadow-xl transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer hover:bg-[#e5dacb] active:bg-[#dbc8b6]"
+      >
+        <img
+          [src]="imageURL"
+          alt="Churros con dulce de leche"
+          class="w-52 rounded-xl"
+        />
+        <h1 class="font-bold text-2xl mt-2">24 churros</h1>
+        <h2 class="font-semibold text-xl">${{ dosDocenasPrice }}</h2>
+      </div>
+    </a>
+  </div>
+  <div class="flex flex-col items-center mt-8 xl:mt-16 gap-4">
+    <h4 class="text-xl font-bold">Comprar por unidad</h4>
+    <app-counter (counterChanged)="onCounterChanged($event)"></app-counter>
+    <p class="text-xl">
+      Precio: <strong>${{ totaUnitPrice }}</strong>
+    </p>
+    <a href="address">
+      <button class="bg-[#dbc997] p-6 rounded-xl text-2xl font-bold">
+        ¡Comprar!
+      </button>
+    </a>
+  </div>
+</div>
