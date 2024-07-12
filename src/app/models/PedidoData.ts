@@ -1,5 +1,6 @@
 export interface Pedido {
   type: string | null;
+  imageChurroURL: string;
   totalChurros: number;
   totalPrice: number;
   clientName: string;
