@@ -1,0 +1,88 @@
+.swiper-container {
+  width: 100%;
+  height: 400px;
+}
+
+.slidingDesktop {
+  display: none;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 55%;
+  left: 30%;
+  padding-right: 70px;
+}
+
+.overlay h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.overlay h5 {
+  font-size: 10px;
+}
+.overlay a {
+  font-size: 15px;
+  width: 5rem;
+  font-weight: bold;
+}
+
+@media (min-width: 426px) {
+  .overlay {
+    top: 50%;
+    left: 37%;
+    padding-right: 150px;
+    transform: translate(-50%, -50%);
+  }
+  .slidingDesktop {
+    display: flex;
+  }
+  .slidingMovil {
+    display: none;
+  }
+}
+
+@media (min-width: 1050px) {
+  .overlay {
+    padding-right: 300px;
+  }
+  .overlay h5 {
+    font-size: 25px;
+  }
+  .overlay h2 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+  .overlay a {
+    font-size: 1.5rem;
+    width: 10rem;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 1460px) {
+  .overlay h2 {
+    font-size: 70px;
+    font-weight: bold;
+  }
+  .overlay a {
+    font-size: 2rem;
+    width: 16rem;
+    font-weight: bold;
+  }
+}
