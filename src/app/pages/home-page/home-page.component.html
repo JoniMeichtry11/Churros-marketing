@@ -1,0 +1,108 @@
+<div class="min-h-screen mt-20">
+  <div class="relative">
+    <div class="relative h-screen flex flex-col justify-end md:justify-center items-center md:items-end">
+      <div class="absolute inset-0 parallax background-image-desktop" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/cyberscript-3284d.appspot.com/o/background-desktop.jpeg?alt=media&token=d9cdcd19-9902-4b34-b584-627a2d48f9ef');"></div>
+      <div class="absolute inset-0 parallax background-image-movil" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/cyberscript-3284d.appspot.com/o/churros-image-2.webp?alt=media&token=3fcb2db6-e52a-4c54-9a82-7dc9ac19d4c1');"></div>
+      <div class="relative z-3 text-center mb-40 md:mb-24 xl:mb-44 spacing-title xl:w-1/2 xl:p-16">
+        <h1 class="text-center text-3xl md:text-5xl xl:text-7xl font-bold px-4 text-title mb-4 xl:mb-24">
+            ¡LOS MEJORES CHURROS DE MARÍA TERESA!
+        </h1>
+        <a href="nuevo-pedido" class="bg-[#290200] text-white p-4 md:p-3 xl:p-6 xl:text-2xl cursor-pointer rounded-md text-nowrap font-bold">
+            ¡Hacer un pedido!
+        </a>
+    </div>
+    </div>
+    <div class="flex justify-center">
+      <div class="px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-8 bg-[#fdf6e3] md:w-1/2">
+        <section class="px-4">
+          <h2
+            #animatedSection
+            [@trigger]="animationState"
+            class="text-3xl md:text-5xl my-4 font-bold text-center text-black"
+          >
+            ¿Quiénes somos?
+          </h2>
+          <div class="flex flex-col items-center">
+            <p class="text-justify text-gray-800 text-xl">
+              En <span class="font-semibold text-black">Churros Dos Hermanos</span>, nos dedicamos a fabricar los mejores
+              <span class="font-semibold text-black">churros caseros y artesanales</span> de la zona. Con un toque
+              <span class="font-semibold text-black">tradicional</span> y
+              <span class="font-semibold text-black">auténtico</span>, nuestros churros se destacan por su
+              <span class="font-semibold text-black">sabor inigualable</span> y la
+              <span class="font-semibold text-black">calidad de los ingredientes</span> que utilizamos.
+            </p>
+            <div class="flex">
+              <video src="https://firebasestorage.googleapis.com/v0/b/cyberscript-3284d.appspot.com/o/Background-Movil(1).mp4?alt=media&token=84c0a3fe-271a-4229-bf89-688d226bd305" muted loop autoplay class="xl:w-72 rounded-lg my-4 md:mb-0 md:mr-4 shadow-lg"></video>
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/cyberscript-3284d.appspot.com/o/churro-dulce-1.jpg?alt=media&token=24655e06-c8fb-4e3f-84ae-b530ac5f402b"
+                alt="Churros Dos Hermanos"
+                class="xl:w-72 rounded-lg my-4 md:mb-0 md:mr-4 shadow-lg hidden xl:block"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-8 px-4">
+          <h3 class="text-3xl md:text-5xl font-bold text-black text-center my-8">Ofrecemos una variedad de opciones que incluyen:</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex flex-col items-center text-center">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/simples.png?alt=media&token=88295da0-482b-48d6-99ba-53f7f550c31e"
+                alt="Churros simples"
+                class="w-52 rounded-xl shadow-lg"
+              />
+              <h1 class="font-bold text-xl xl:text-2xl mt-2 text-black">CHURROS</h1>
+              <h2 class="font-semibold text-lg xl:text-xl text-gray-800">Simples</h2>
+              <p class="text-gray-800 mt-2 text-xl">
+                Crujientes por fuera y tiernos por dentro, nuestros churros simples son perfectos para
+                disfrutar en cualquier momento del día.
+              </p>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/dulcedeleche.png?alt=media&token=8c326463-c25c-40ac-a508-a0acaf034a72"
+                alt="Churros con dulce de leche"
+                class="w-52 rounded-xl shadow-lg"
+              />
+              <h1 class="font-bold text-xl xl:text-2xl mt-2 text-black">CHURROS</h1>
+              <h2 class="font-semibold text-lg xl:text-xl text-gray-800">con Dulce de leche</h2>
+              <p class="text-gray-800 mt-2 text-xl">
+                Para los amantes del dulce, nuestros churros rellenos de dulce de leche son una
+                delicia irresistible que te transportará a un mundo de sabores.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-8 px-4">
+          <h2
+            class="text-3xl md:text-5xl my-8 font-bold text-center text-black"
+          >
+            Calidad y compromiso
+          </h2>
+          <p class="text-gray-800 text-justify text-xl">
+            En <span class="font-semibold text-black">Churros Dos Hermanos</span>, cada churro es elaborado con
+            <span class="font-semibold text-black">dedicación y esmero</span>, garantizando una
+            <span class="font-semibold text-black">experiencia culinaria única</span>. Ya sea para un desayuno, una
+            merienda o simplemente para satisfacer un antojo, nuestros churros son la elección perfecta.
+          </p>
+          <video src="https://firebasestorage.googleapis.com/v0/b/cyberscript-3284d.appspot.com/o/publicidad-calidad.mp4?alt=media&token=e2a9007a-6fbe-4058-9a4a-64d1cc7c0638" muted loop autoplay class="rounded-lg my-4 md:mb-0 md:mr-4 shadow-lg"></video>
+        </section>
+
+        <section class="mt-8 px-4">
+          <p class="text-gray-800 text-justify text-lg">
+              Descubre por qué somos la opción preferida para los verdaderos amantes de los churros. ¡Te llevamos el
+              <span class="font-semibold text-black">sabor</span> y la
+              <span class="font-semibold text-black">calidez</span> de
+              <span class="font-semibold text-black">Churros Dos Hermanos</span> directamente a tu puerta!
+          </p>
+        </section>
+        <div class="flex justify-center mt-8">
+          <a href="nuevo-pedido" class="bg-[#290200] text-white p-4 md:p-3 xl:p-6 xl:text-2xl cursor-pointer rounded-md text-nowrap font-bold">
+            ¡Hacer un pedido!
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

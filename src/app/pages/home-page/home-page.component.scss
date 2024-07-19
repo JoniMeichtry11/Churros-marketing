@@ -1,0 +1,41 @@
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.background-image-desktop{
+  display: none;
+}
+.text-title{
+  color: white;
+}
+@media (min-width: 426px) {
+  .overlay {
+    top: 50%;
+    left: 37%;
+    padding-right: 150px;
+    transform: translate(-50%, -50%);
+  }
+  .background-image-desktop {
+    display: block;
+  }
+  .background-image-movil {
+    display: none;
+  }
+  .text-title{
+    color: black;
+  }
+}
+@media (min-width: 768px) {
+  .spacing-container-title{
+    justify-content: center;
+    align-items: end;
+  }
+  .spacing-title{
+    width: 50%;
+  }
+  .text-title{
+    color: white;
+  }
+}

@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { CantidadComponent, DataClientComponent, ReviewPageComponent, ThanksComponent, TipoDeChurroComponent } from './pages';
+import { CantidadComponent, DataClientComponent, HomePageComponent, ReviewPageComponent, ThanksComponent, TipoDeChurroComponent } from './pages';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/nuevo-pedido',
+    component: HomePageComponent,
     pathMatch: 'full'
   },
   {
@@ -29,6 +29,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/tipo-de-churro'
+    redirectTo: ''
   }
 ];
