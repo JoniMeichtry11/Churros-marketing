@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "site": "churrosdoshermanos",
+    "public": "dist/churros-marketing/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "us-central1"
+    }
+  }
+}
