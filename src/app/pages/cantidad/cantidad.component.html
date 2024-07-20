@@ -49,6 +49,11 @@
     <p class="text-xl">
       Precio: <strong>${{ totaUnitPrice }}</strong>
     </p>
+    @if(quantityError){
+      <div class="text-red-500 mt-2">
+        Seleccioná una cantidad de churros por favor
+      </div>
+    }
     <a (click)="buyChurros(totalUnitChurros, totaUnitPrice)">
       <button class="bg-[#dbc997] p-6 rounded-xl text-2xl font-bold">
         ¡Comprar!

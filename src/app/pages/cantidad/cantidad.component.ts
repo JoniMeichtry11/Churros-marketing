@@ -21,6 +21,7 @@ export class CantidadComponent implements OnInit {
   imageURL: string =
     'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/simples.png?alt=media&token=88295da0-482b-48d6-99ba-53f7f550c31e';
   purchaseTotal: Purchase = {} as Purchase;
+  quantityError: boolean = false;
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
@@ -35,6 +36,7 @@ export class CantidadComponent implements OnInit {
   }
 
   onCounterChanged(count: number) {
+    this.quantityError = false;
     this.totalUnitChurros = count;
     this.totaUnitPrice = count * this.unitPrice;
   }
@@ -58,11 +60,15 @@ export class CantidadComponent implements OnInit {
   }
 
   buyChurros(quantity: number, price: number){
-    this.purchaseTotal.type = this.typeChurro;
-    this.purchaseTotal.totalChurros = quantity;
-    this.purchaseTotal.totalPrice = price;
-    this.purchaseTotal.imageChurroURL = this.typeChurro === 'simple' ? 'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/simples.png?alt=media&token=88295da0-482b-48d6-99ba-53f7f550c31e' : 'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/dulcedeleche.png?alt=media&token=8c326463-c25c-40ac-a508-a0acaf034a72';
-    localStorage.setItem('purchase', JSON.stringify(this.purchaseTotal));
-    this.router.navigate(['address']);
+    if(quantity > 0){
+      this.purchaseTotal.type = this.typeChurro;
+      this.purchaseTotal.totalChurros = quantity;
+      this.purchaseTotal.totalPrice = price;
+      this.purchaseTotal.imageChurroURL = this.typeChurro === 'simple' ? 'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/simples.png?alt=media&token=88295da0-482b-48d6-99ba-53f7f550c31e' : 'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/dulcedeleche.png?alt=media&token=8c326463-c25c-40ac-a508-a0acaf034a72';
+      localStorage.setItem('purchase', JSON.stringify(this.purchaseTotal));
+      this.router.navigate(['address']);
+    } else {
+      this.quantityError = true;
+    }
   }
 }
