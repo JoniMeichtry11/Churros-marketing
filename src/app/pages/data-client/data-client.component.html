@@ -6,8 +6,9 @@
     <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
       <div class="items-center mt-2">
         <div class="w-full flex flex-col">
-          <label class="font-semibold leading-none">Nombre</label>
+          <label for="name" class="font-semibold leading-none">Nombre</label>
           <input
+            id="name"
             type="text"
             class="leading-none p-3 focus:outline-none mt-4 border-2 rounded"
             [ngClass]="{
@@ -25,8 +26,9 @@
       </div>
       <div class="md:flex items-center mt-4">
         <div class="w-full flex flex-col">
-          <label class="font-semibold leading-none">Dirección </label>
+          <label for="address" class="font-semibold leading-none">Dirección </label>
           <input
+            id="address"
             type="text"
             class="leading-none p-3 focus:outline-none mt-4 border-2 rounded"
             [ngClass]="{
@@ -44,8 +46,9 @@
       </div>
       <div>
         <div class="w-full flex flex-col mt-4">
-          <label class="font-semibold leading-none">Indicaciones adicionales de esta dirección (opcional)</label>
+          <label for="adition-direction" class="font-semibold leading-none">Indicaciones adicionales de esta dirección (opcional)</label>
           <textarea
+            id="adition-direction"
             type="text"
             class="h-40 text-base leading-none p-3 focus:outline-none mt-4 bg-gray-200 border-0 rounded"
             formControlName="aditionalInfoAddress"
@@ -53,8 +56,8 @@
         </div>
       </div>
       <div class="w-full flex flex-col mt-4">
-        <label class="font-semibold leading-none">Día de entrega</label>
-        <select class="leading-none p-3 mt-4 bg-gray-200 border-2 rounded" formControlName="deliveryDay" [ngClass]="{
+        <label for="delivery" class="font-semibold leading-none">Día de entrega</label>
+        <select id="delivery" class="leading-none p-3 mt-4 bg-gray-200 border-2 rounded" formControlName="deliveryDay" [ngClass]="{
           'border-red-500': deliveryDay?.invalid && (deliveryDay?.dirty || deliveryDay?.touched),
           'bg-gray-200': true
         }">
@@ -69,8 +72,8 @@
         }
       </div>
       <div class="w-full flex flex-col mt-4">
-        <label class="font-semibold leading-none">Horario de entrega</label>
-        <select class="leading-none p-3 mt-4 bg-gray-200 border-2 rounded" formControlName="deliveryTime" [ngClass]="{
+        <label for="schedule" class="font-semibold leading-none">Horario de entrega</label>
+        <select id="schedule" class="leading-none p-3 mt-4 bg-gray-200 border-2 rounded" formControlName="deliveryTime" [ngClass]="{
           'border-red-500': deliveryTime?.invalid && (deliveryTime?.dirty || deliveryTime?.touched),
           'bg-gray-200': true
         }">

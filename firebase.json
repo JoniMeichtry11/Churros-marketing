@@ -1,7 +1,7 @@
 {
   "hosting": {
+    "source": ".",
     "site": "churrosdoshermanos",
-    "public": "dist/churros-marketing/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
