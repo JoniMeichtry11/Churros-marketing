@@ -46,7 +46,7 @@ export class ReviewPageComponent implements OnInit {
 
   sendMessage() {
     const encodedMessage = encodeURIComponent(this.message);
-    const whatsappUrl = `https://wa.me/3462680561?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/3462675246?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
 
     this.router.navigate(['thanks']);
