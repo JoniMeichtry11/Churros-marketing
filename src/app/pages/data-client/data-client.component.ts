@@ -7,32 +7,34 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ModalComponent } from '../../components';
+import { ModalType } from '../../models';
+import { ModalService } from '../../services';
 
 @Component({
   selector: 'app-data-client',
   standalone: true,
-  imports: [ReactiveFormsModule, NgClass],
+  imports: [ReactiveFormsModule, NgClass, ModalComponent],
   templateUrl: './data-client.component.html',
   styleUrl: './data-client.component.scss',
 })
 export class DataClientComponent implements OnInit {
   clientForm: FormGroup;
-  availableDays: string[] = [];
-  deliveryTimes: string[] = ['16:00', '17:00', '18:00', '19:00'];
-  workingDays: string[] = ['Lunes', 'Martes', 'Jueves', 'Viernes'];
+  churrosDay: string = '';
+  public ModalType = ModalType;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private modalService: ModalService,) {
     this.clientForm = this.formBuilder.group({
       clientName: ['', Validators.required],
       clientAddress: ['', Validators.required],
       aditionalInfoAddress: [''],
-      deliveryDay: ['', Validators.required],
-      deliveryTime: ['', Validators.required],
+      deliveryDay: [this.getChurrosDay(), ],
+      deliveryTime: ['16hs - 18hs',],
     });
   }
 
   ngOnInit(): void {
-    this.setAvailableDays();
+    this.churrosDay = this.getChurrosDay();
   }
 
   get clientName() {
@@ -43,62 +45,33 @@ export class DataClientComponent implements OnInit {
     return this.clientForm.get('clientAddress');
   }
 
-  get deliveryDay() {
-    return this.clientForm.get('deliveryDay');
-  }
+  getChurrosDay(testDate?: Date): string {
+    const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+    const today = testDate || new Date();
+    const currentDay = today.getDay();
+    const currentHour = today.getHours();
 
-  get deliveryTime() {
-    return this.clientForm.get('deliveryTime');
-  }
+    let churrosDay = '';
 
-  setAvailableDays() {
-    const today = new Date();
-    const dayOfWeek = today.getDay();
-    const daysMap = [
-      'Domingo',
-      'Lunes',
-      'Martes',
-      'Miércoles',
-      'Jueves',
-      'Viernes',
-      'Sábado',
-    ];
-
-    if (this.workingDays.includes(daysMap[dayOfWeek])) {
-      this.availableDays.push('Hoy ' + `(${daysMap[dayOfWeek]})`);
+    if (currentDay === 0) {
+        churrosDay = 'Lunes';
+    } else if (currentDay >= 1 && currentDay <= 5) {
+        if (currentHour >= 18) {
+            churrosDay = days[currentDay + 1];
+        } else {
+            churrosDay = 'Hoy ' + days[currentDay];
+        }
+    } else if (currentDay === 6) {
+        churrosDay = 'Lunes';
+    } else {
+        churrosDay = 'Lunes';
     }
 
-    for (let i = 1; i <= 6; i++) {
-      const nextDay = new Date(today);
-      nextDay.setDate(today.getDate() + i);
-      const nextDayOfWeek = nextDay.getDay();
-      const nextDayName = daysMap[nextDayOfWeek];
+    return churrosDay;
+  }
 
-      if (daysMap[dayOfWeek] === 'Viernes') {
-        if (this.workingDays.includes(nextDayName)) {
-          this.availableDays.push(nextDayName);
-        }
-        break;
-      }
-
-      if (
-        this.workingDays.includes(daysMap[dayOfWeek]) &&
-        dayOfWeek !== 0 &&
-        dayOfWeek !== 6
-      ) {
-        if (
-          this.workingDays.includes(nextDayName) &&
-          this.workingDays.indexOf(nextDayName) >
-            this.workingDays.indexOf(daysMap[dayOfWeek])
-        ) {
-          this.availableDays.push(nextDayName);
-        }
-      } else {
-        if (this.workingDays.includes(nextDayName)) {
-          this.availableDays.push(nextDayName);
-        }
-      }
-    }
+  showSchedules() {
+    this.modalService.setShowModal(true);
   }
 
   onSubmit() {
