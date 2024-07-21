@@ -19,7 +19,7 @@ export class CantidadComponent implements OnInit {
   totalUnitChurros: number = 0;
   totaUnitPrice: number = 0;
   imageURL: string =
-    'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/simples.png?alt=media&token=88295da0-482b-48d6-99ba-53f7f550c31e';
+    '../../../assets/images/simples-_1_.webp';
   purchaseTotal: Purchase = {} as Purchase;
   quantityError: boolean = false;
   constructor(private route: ActivatedRoute, private router: Router) {}
@@ -46,7 +46,7 @@ export class CantidadComponent implements OnInit {
     this.docenaPrice = 3999;
     this.dosDocenasPrice = 6499;
     this.imageURL =
-      'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/simples.png?alt=media&token=88295da0-482b-48d6-99ba-53f7f550c31e';
+      '../../../assets/images/simples-_1_.webp';
     this.unitPrice = 500;
   }
 
@@ -55,7 +55,7 @@ export class CantidadComponent implements OnInit {
     this.docenaPrice = 4499;
     this.dosDocenasPrice = 7999;
     this.imageURL =
-      'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/dulcedeleche.png?alt=media&token=8c326463-c25c-40ac-a508-a0acaf034a72';
+      '../../../assets/images/dulcedeleche-_1_.webp';
     this.unitPrice = 600;
   }
 
@@ -64,7 +64,7 @@ export class CantidadComponent implements OnInit {
       this.purchaseTotal.type = this.typeChurro;
       this.purchaseTotal.totalChurros = quantity;
       this.purchaseTotal.totalPrice = price;
-      this.purchaseTotal.imageChurroURL = this.typeChurro === 'simple' ? 'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/simples.png?alt=media&token=88295da0-482b-48d6-99ba-53f7f550c31e' : 'https://firebasestorage.googleapis.com/v0/b/churros-administrator.appspot.com/o/dulcedeleche.png?alt=media&token=8c326463-c25c-40ac-a508-a0acaf034a72';
+      this.purchaseTotal.imageChurroURL = this.typeChurro === 'simple' ? '../../../assets/images/simples-_1_.webp' : '../../../assets/images/dulcedeleche-_1_.webp';
       localStorage.setItem('purchase', JSON.stringify(this.purchaseTotal));
       this.router.navigate(['address']);
     } else {
