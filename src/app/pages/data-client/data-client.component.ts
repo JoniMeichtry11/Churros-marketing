@@ -29,7 +29,7 @@ export class DataClientComponent implements OnInit {
       clientAddress: ['', Validators.required],
       aditionalInfoAddress: [''],
       deliveryDay: [this.getChurrosDay(), ],
-      deliveryTime: ['16hs - 18hs',],
+      deliveryTime: ['15hs - 18hs',],
     });
   }
 
