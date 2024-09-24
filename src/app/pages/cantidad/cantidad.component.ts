@@ -63,6 +63,7 @@ export class CantidadComponent implements OnInit {
     if(quantity > 0){
       this.purchaseTotal.typeChurro = this.typeChurro === 'simple' ? 'simple' : 'con dulce de leche';
       this.purchaseTotal.totalChurros = quantity;
+      this.purchaseTotal.typeAccordingtoQuantity = quantity === 24 ? 'dos docenas' : quantity === 12 ? 'docena' : quantity === 6 ? 'media docena' : 'unidad';
       this.purchaseTotal.totalPrice = price;
       this.purchaseTotal.imageChurroURL = this.typeChurro === 'simple' ? '../../../assets/images/simples-_1_.webp' : '../../../assets/images/dulcedeleche-_1_.webp';
       localStorage.setItem('purchase', JSON.stringify(this.purchaseTotal));
