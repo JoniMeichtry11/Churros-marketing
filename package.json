@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0",
-    "build": "ng build",
+    "build": "ng build && node generate-sitemap.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -21,6 +21,7 @@
     "@angular/service-worker": "^17.3.12",
     "canvas-confetti": "^1.9.3",
     "rxjs": "~7.8.0",
+    "sitemap": "^8.0.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
