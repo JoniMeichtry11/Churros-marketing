@@ -17,7 +17,7 @@ export class CantidadComponent implements OnInit {
   dosDocenasPrice: number = 6499;
   unitPrice: number = 499;
   totalUnitChurros: number = 0;
-  totaUnitPrice: number = 0;
+  totalUnitPrice: number = 0;
   imageURL: string =
     '../../../assets/images/simples-_1_.webp';
   purchaseTotal: Purchase = {} as Purchase;
@@ -38,7 +38,7 @@ export class CantidadComponent implements OnInit {
   onCounterChanged(count: number) {
     this.quantityError = false;
     this.totalUnitChurros = count;
-    this.totaUnitPrice = count * this.unitPrice;
+    this.totalUnitPrice = count * this.unitPrice;
   }
 
   private setSimplePrices(): void {

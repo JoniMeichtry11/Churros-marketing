@@ -53,14 +53,14 @@
     <h4 class="text-xl font-bold">Comprar por unidad</h4>
     <app-counter (counterChanged)="onCounterChanged($event)"></app-counter>
     <p class="text-xl">
-      Precio: <strong>${{ totaUnitPrice }}</strong>
+      Precio: <strong>${{ totalUnitPrice }}</strong>
     </p>
     @if(quantityError){
       <div class="text-red-500 mt-2">
         Seleccioná una cantidad de churros por favor
       </div>
     }
-    <a (click)="buyChurros(totalUnitChurros, totaUnitPrice)">
+    <a (click)="buyChurros(totalUnitChurros, totalUnitPrice)">
       <button class="bg-[#dbc997] p-6 rounded-xl text-2xl font-bold">
         ¡Comprar!
       </button>
