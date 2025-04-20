@@ -27,7 +27,7 @@ export class ReviewPageComponent implements OnInit {
 - *Nombre:* ${clientName}
 - *Dirección:* ${clientAddress}
 - *Datos adicionales:* ${aditionalInfoAddress}
-- *Envío: ${delivery}
+- *Envío:* ${delivery}
 - *Horario de entrega:* ${deliveryTime}
 - *Cantidad de churros:* ${totalChurros}
 - *Venta por:* ${typeAccordingtoQuantity}
@@ -39,7 +39,7 @@ export class ReviewPageComponent implements OnInit {
       this.message = `Hola, quiero confirmar mi pedido de churros:
 - *Nombre:* ${clientName}
 - *Dirección:* ${clientAddress}
-- *Envío: ${delivery}
+- *Envío:* ${delivery}
 - *Horario de entrega:* ${deliveryTime}
 - *Cantidad de churros:* ${totalChurros}
 - *Venta por:* ${typeAccordingtoQuantity}
