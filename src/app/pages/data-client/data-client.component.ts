@@ -28,6 +28,7 @@ export class DataClientComponent implements OnInit {
       clientName: ['', Validators.required],
       clientAddress: ['', Validators.required],
       aditionalInfoAddress: [''],
+      delivery: ['¡Gratis!'],
       deliveryDay: [this.getChurrosDay(), ],
       deliveryTime: ['15hs - 18hs',],
     });

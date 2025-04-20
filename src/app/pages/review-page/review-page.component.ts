@@ -21,12 +21,13 @@ export class ReviewPageComponent implements OnInit {
   }
 
   generateMessage() {
-    const { clientName, clientAddress, aditionalInfoAddress, totalChurros, typeChurro, totalPrice, deliveryDay, deliveryTime, typeAccordingtoQuantity } = this.pedidoReview;
+    const { clientName, clientAddress, aditionalInfoAddress, totalChurros, typeChurro, totalPrice, delivery, deliveryDay, deliveryTime, typeAccordingtoQuantity } = this.pedidoReview;
     if(aditionalInfoAddress){
       this.message = `Hola, quiero confirmar mi pedido de churros:
 - *Nombre:* ${clientName}
 - *Dirección:* ${clientAddress}
 - *Datos adicionales:* ${aditionalInfoAddress}
+- *Envío: ${delivery}
 - *Día de entrega:* ${deliveryDay}
 - *Horario de entrega:* ${deliveryTime}
 - *Cantidad de churros:* ${totalChurros}
@@ -39,6 +40,7 @@ export class ReviewPageComponent implements OnInit {
       this.message = `Hola, quiero confirmar mi pedido de churros:
 - *Nombre:* ${clientName}
 - *Dirección:* ${clientAddress}
+- *Envío: ${delivery}
 - *Día de entrega:* ${deliveryDay}
 - *Horario de entrega:* ${deliveryTime}
 - *Cantidad de churros:* ${totalChurros}
