@@ -12,10 +12,10 @@ import { Purchase } from '../../models/PedidoData';
 })
 export class CantidadComponent implements OnInit {
   typeChurro: string | null = 'simple';
-  mediaDocenaPrice: number = 2999;
-  docenaPrice: number = 3999;
-  dosDocenasPrice: number = 6499;
-  unitPrice: number = 499;
+  mediaDocenaPrice: number = 3999;
+  docenaPrice: number = 5999;
+  dosDocenasPrice: number = 9499;
+  unitPrice: number = 599;
   totalUnitChurros: number = 0;
   totalUnitPrice: number = 0;
   imageURL: string =
@@ -42,21 +42,21 @@ export class CantidadComponent implements OnInit {
   }
 
   private setSimplePrices(): void {
-    this.mediaDocenaPrice = 2999;
-    this.docenaPrice = 3999;
-    this.dosDocenasPrice = 6499;
+    this.mediaDocenaPrice = 3999;
+    this.docenaPrice = 5999;
+    this.dosDocenasPrice = 9499;
     this.imageURL =
       '../../../assets/images/simples-_1_.webp';
-    this.unitPrice = 500;
+    this.unitPrice = 600;
   }
 
   private setDulcePrices(): void {
-    this.mediaDocenaPrice = 3499;
-    this.docenaPrice = 4499;
-    this.dosDocenasPrice = 7999;
+    this.mediaDocenaPrice = 4999;
+    this.docenaPrice = 8499;
+    this.dosDocenasPrice = 15999;
     this.imageURL =
       '../../../assets/images/dulcedeleche-_1_.webp';
-    this.unitPrice = 600;
+    this.unitPrice = 900;
   }
 
   buyChurros(quantity: number, price: number){
