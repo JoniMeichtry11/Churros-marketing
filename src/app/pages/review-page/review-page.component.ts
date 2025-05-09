@@ -21,24 +21,30 @@ export class ReviewPageComponent implements OnInit {
   }
 
   generateMessage() {
-    const { clientName, clientAddress, aditionalInfoAddress, totalChurros, totalPrice, deliveryDay, deliveryTime } = this.pedidoReview;
+    const { clientName, clientAddress, aditionalInfoAddress, totalChurros, typeChurro, totalPrice, delivery, deliveryTime, typeAccordingtoQuantity } = this.pedidoReview;
     if(aditionalInfoAddress){
       this.message = `Hola, quiero confirmar mi pedido de churros:
 - *Nombre:* ${clientName}
 - *Dirección:* ${clientAddress}
 - *Datos adicionales:* ${aditionalInfoAddress}
-- *Día de entrega:* ${deliveryDay}
-- *Horario de entrega:* ${deliveryTime}hs
+- *Envío:* ${delivery}
+- *Horario de entrega:* ${deliveryTime}
 - *Cantidad de churros:* ${totalChurros}
+- *Venta por:* ${typeAccordingtoQuantity}
+- *Tipo de churros:* ${typeChurro}
+- *Estado:* Pendiente
 - *Precio Total:* $${totalPrice}
 ¡Muchas Gracias! 😁👍🏼`;
     } else {
       this.message = `Hola, quiero confirmar mi pedido de churros:
 - *Nombre:* ${clientName}
 - *Dirección:* ${clientAddress}
-- *Día de entrega:* ${deliveryDay}
-- *Horario de entrega:* ${deliveryTime}hs
+- *Envío:* ${delivery}
+- *Horario de entrega:* ${deliveryTime}
 - *Cantidad de churros:* ${totalChurros}
+- *Venta por:* ${typeAccordingtoQuantity}
+- *Tipo de churros:* ${typeChurro}
+- *Estado:* Pendiente
 - *Precio Total:* $${totalPrice}
 ¡Muchas Gracias! 😁👍🏼`;
     }
@@ -46,7 +52,7 @@ export class ReviewPageComponent implements OnInit {
 
   sendMessage() {
     const encodedMessage = encodeURIComponent(this.message);
-    const whatsappUrl = `https://wa.me/3462680561?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/3462675246?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
 
     this.router.navigate(['thanks']);

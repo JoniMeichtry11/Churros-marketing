@@ -9,11 +9,16 @@
       >
         <img
           [src]="imageURL"
-          alt="Churros"
+          alt="Churros simples"
           class="w-52 rounded-xl"
+          width="623px"
+          height="624px"
         />
         <h1 class="font-bold text-2xl mt-2">6 churros</h1>
         <h2 class="font-semibold text-xl">${{ mediaDocenaPrice }}</h2>
+        <div class="text-center text-green-600 font-bold text-xl mt-4">
+          <span class="block">Envío gratis</span>
+        </div>
       </div>
     </a>
     <a (click)="buyChurros(12, docenaPrice)">
@@ -24,9 +29,14 @@
           [src]="imageURL"
           alt="Churros con dulce de leche"
           class="w-52 rounded-xl"
+          width="623px"
+          height="624px"
         />
         <h1 class="font-bold text-2xl mt-2">12 churros</h1>
         <h2 class="font-semibold text-xl">${{ docenaPrice }}</h2>
+        <div class="text-center text-green-600 font-bold text-xl mt-4">
+          <span class="block">Envío gratis</span>
+        </div>
       </div>
     </a>
     <a (click)="buyChurros(24, dosDocenasPrice)">
@@ -37,9 +47,14 @@
           [src]="imageURL"
           alt="Churros con dulce de leche"
           class="w-52 rounded-xl"
+          width="623px"
+          height="624px"
         />
         <h1 class="font-bold text-2xl mt-2">24 churros</h1>
         <h2 class="font-semibold text-xl">${{ dosDocenasPrice }}</h2>
+        <div class="text-center text-green-600 font-bold text-xl mt-4">
+          <span class="block">Envío gratis</span>
+        </div>
       </div>
     </a>
   </div>
@@ -47,9 +62,14 @@
     <h4 class="text-xl font-bold">Comprar por unidad</h4>
     <app-counter (counterChanged)="onCounterChanged($event)"></app-counter>
     <p class="text-xl">
-      Precio: <strong>${{ totaUnitPrice }}</strong>
+      Precio: <strong>${{ totalUnitPrice }}</strong>
     </p>
-    <a (click)="buyChurros(totalUnitChurros, totaUnitPrice)">
+    @if(quantityError){
+      <div class="text-red-500 mt-2">
+        Seleccioná una cantidad de churros por favor
+      </div>
+    }
+    <a (click)="buyChurros(totalUnitChurros, totalUnitPrice)">
       <button class="bg-[#dbc997] p-6 rounded-xl text-2xl font-bold">
         ¡Comprar!
       </button>

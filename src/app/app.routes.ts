@@ -9,23 +9,28 @@ export const routes: Routes = [
   },
   {
     path: 'nuevo-pedido',
-    component: TipoDeChurroComponent
+    component: TipoDeChurroComponent,
+    title: 'Nuevo pedido - churros dos hermanos'
   },
   {
     path: 'cantidad/:type',
-    component: CantidadComponent
+    component: CantidadComponent,
+    title: 'Churros dos hermanos'
   },
   {
     path: 'address',
-    component: DataClientComponent
+    component: DataClientComponent,
+    title: 'Churros dos hermanos'
   },
   {
     path: 'review',
-    component: ReviewPageComponent
+    component: ReviewPageComponent,
+    title: 'Finalizar compra - churros dos hermanos'
   },
   {
     path: 'thanks',
-    component: ThanksComponent
+    component: ThanksComponent,
+    title: 'Churros dos hermanos'
   },
   {
     path: '**',

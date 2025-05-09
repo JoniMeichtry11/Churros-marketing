@@ -42,10 +42,13 @@ import {
 export class HomePageComponent implements OnInit, AfterViewInit {
   @ViewChild('animatedSection') animatedSection!: ElementRef;
   animationState = 'initial';
+  @ViewChild('lazyVideo') lazyVideo!: ElementRef<HTMLVideoElement>;
 
   ngOnInit() {}
 
   ngAfterViewInit() {
+    const videoElement = this.lazyVideo.nativeElement;
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -53,6 +56,30 @@ export class HomePageComponent implements OnInit, AfterViewInit {
           observer.unobserve(this.animatedSection.nativeElement);
         }
       });
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            videoElement.setAttribute('preload', 'auto');
+            videoElement.play();
+            observer.unobserve(videoElement);
+          }
+        });
+      });
+
+      observer.observe(videoElement);
+    } else {
+      // Fallback for browsers that don't support IntersectionObserver
+      videoElement.setAttribute('preload', 'auto');
+      videoElement.play();
+    }
+
+    videoElement.addEventListener('loadeddata', () => {
+      if (videoElement.paused) {
+        videoElement.play();
+      }
     });
 
     observer.observe(this.animatedSection.nativeElement);

@@ -1,19 +1,22 @@
 export interface Pedido {
   type: string | null;
   imageChurroURL: string;
+  typeChurro: string;
   totalChurros: number;
+  typeAccordingtoQuantity: string;
   totalPrice: number;
   clientName: string;
   clientAddress: string;
   aditionalInfoAddress: string;
-  deliveryDay: string;
+  delivery: string
   deliveryTime: string;
 }
 
 export interface Purchase {
-  type: string | null;
+  typeChurro: string | null;
   imageChurroURL: string;
   totalChurros: number;
+  typeAccordingtoQuantity: string;
   totalPrice: number;
 }
 
